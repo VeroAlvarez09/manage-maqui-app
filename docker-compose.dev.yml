@@ -1,0 +1,13 @@
+version: "3"
+services:
+  manage-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    image: manage-app:latest
+    container_name: manage-app
+    ports:
+      - "8082:8082"
+    volumes:
+      - .:/app
+    command: /bin/sh -c "npm i && npm run dev-pwa"

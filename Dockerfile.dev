@@ -1,0 +1,7 @@
+FROM node:12-alpine
+
+WORKDIR  /app
+
+RUN yarn global add @quasar/cli
+
+EXPOSE 8082
