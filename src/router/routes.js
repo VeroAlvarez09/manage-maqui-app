@@ -91,8 +91,13 @@ const routes = [
       },
       //Cobrar
       {
-        path: "/cobros",
+        path: "/employees/hours",
         component: () => import("components/Employees/Hours/List.vue")
+      },
+      //Cobrar
+      {
+        path: "/machines/hours",
+        component: () => import("components/Machines/Hours/List.vue")
       },
       {
         path: "/marketing",

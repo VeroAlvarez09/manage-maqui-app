@@ -131,12 +131,12 @@ export default {
         {
           title: "Horas totales",
           icon: "access_time",
-          link: "/cobros"
+          link: "/employees/hours"
         },
         {
           title: "Orden de servicio",
           icon: "monetization_on",
-          link: "/cobros"
+          link: "/machines/hours"
         },
         // {
         //   title: "Administración",
