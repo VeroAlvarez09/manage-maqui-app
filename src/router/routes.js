@@ -92,7 +92,7 @@ const routes = [
       //Cobrar
       {
         path: "/cobros",
-        component: () => import("components/Cobros/index.vue")
+        component: () => import("components/Employees/Hours/List.vue")
       },
       {
         path: "/marketing",
