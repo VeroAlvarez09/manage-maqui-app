@@ -55,8 +55,8 @@
           <td class="text-center">{{ dat.machine.brand }}</td>
           <td class="text-center">{{ dat.workedAt }}</td>
           <td class="text-center">{{ dat.totalHours }}</td>
-          <td class="text-center">{{ dat.valuePerHour }}</td>
-          <td class="text-center">{{ dat.totalValue }}</td>
+          <td class="text-center">${{ dat.valuePerHour.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") }}</td>
+          <td class="text-center">${{ dat.totalValue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") }}</td>
         </tr>
       </table>
     </div>
