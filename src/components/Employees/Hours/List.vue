@@ -4,7 +4,22 @@
       <div class="q-pb-lg top-right">
         <q-card flat bordered class>
           <q-card-section class="row">
-            <div class="col-8 text-h6">Filtros</div>
+            <div class="col-12 text-h6">Filtros</div>
+            <div class="col-2 q-ma-sm">
+              <q-select
+                v-model="filter.year"
+                :options="years"
+                clearable
+                borderless
+                dense
+                outlined
+                debounce="300"
+                emit-value
+                map-options
+                label="Año"
+                @input="onRequest()"
+              />
+            </div>
             <div class="col-4 q-ma-sm">
               <q-select
                 v-model="filter.month"
@@ -17,20 +32,7 @@
                 emit-value
                 map-options
                 label="Mes"
-              />
-            </div>
-            <div class="col-2 q-ma-sm">
-              <q-select
-                v-model="filter.year"
-                :options="years"
-                clearable
-                borderless
-                dense
-                outlined
-                debounce="300"
-                emit-value
-                map-options
-                label="Mes"
+                @input="onRequest()"
               />
             </div>
           </q-card-section>
