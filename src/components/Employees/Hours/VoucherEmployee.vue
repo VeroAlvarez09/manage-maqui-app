@@ -55,8 +55,8 @@
           <td class="text-center">{{ dat.machine.brand }}</td>
           <td class="text-center">{{ dat.workedAt }}</td>
           <td class="text-center">{{ dat.totalHours }}</td>
-          <td class="text-center">${{ dat.valuePerHour.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") }}</td>
-          <td class="text-center">${{ dat.totalValue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") }}</td>
+          <td class="text-center">${{ dat.valuePerHour | currency }}</td>
+          <td class="text-center">${{ dat.totalValue | currency }}</td>
         </tr>
       </table>
     </div>
@@ -66,17 +66,17 @@
     </div>
     <div class="col-3 text-right">
       <b>Horas:</b> {{ data.totalHours }}<br>
-      <b>Bonificación:</b> ${{ data.totalValue.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") }}
-      <b>Salario:</b> ${{ data.salary.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") }}
+      <b>Bonificación:</b> ${{ data.totalValue | currency }}
+      <b>Salario:</b> ${{ data.salary | currency }}
     </div>
   </div>
 </template>
 
 <script>
-import Moment from "moment/moment";
-import ServiceApi from "src/helpers/ServiceApi";
+import {Filters} from "../../../mixins/index";
 
 export default {
+  mixins: [Filters],
   props: {
     data: {
       type: Object,
