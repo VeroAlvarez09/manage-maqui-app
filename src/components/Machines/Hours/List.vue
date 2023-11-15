@@ -77,7 +77,7 @@
               {{ col.value }}
             </q-td>
             <q-td auto-width>
-              <q-btn flat round dense icon="print" @click="openModal(props.row)"/>
+              <q-btn push label="Liquidación" color="green" @click="openModal(props.row)"/>
             </q-td>
             <q-dialog v-model="modalVoucherMachine">
               <q-card style="width: 700px; max-width: 80vw;" v-if="props.row">
@@ -87,7 +87,7 @@
                 </q-card-section>
 
                 <q-card-actions align="right">
-                  <q-btn label="Imprimir" @click="imprimir" v-close-popup/>
+                  <q-btn label="Imprimir" icon="print" @click="imprimir" v-close-popup/>
                 </q-card-actions>
               </q-card>
             </q-dialog>

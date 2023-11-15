@@ -13,9 +13,9 @@
                   <q-btn color="grey-7" round flat icon="more_vert">
                     <q-menu cover auto-close>
                       <q-list>
-                        <q-item clickable>
-                          <q-item-section @click="deleteUser">Eliminar</q-item-section>
-                        </q-item>
+<!--                        <q-item clickable>-->
+<!--                          <q-item-section @click="deleteUser">Eliminar</q-item-section>-->
+<!--                        </q-item>-->
                         <q-item clickable>
                           <q-item-section @click="edit">Editar</q-item-section>
                         </q-item>
@@ -55,8 +55,8 @@
             </q-card-section>
             <q-card-actions vertical>
               <q-btn color="accent" @click="edit">Editar</q-btn>
-              <br>
-              <q-btn color="secondary" @click="deleteUser" disable>Eliminar</q-btn>
+<!--              <br>-->
+<!--              <q-btn color="secondary" @click="deleteUser" disable>Eliminar</q-btn>-->
               <br>
               <q-btn flat @click="back">Regresar</q-btn>
             </q-card-actions>

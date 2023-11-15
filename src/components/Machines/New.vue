@@ -120,6 +120,20 @@
                 />
               </div>
 
+              <q-select
+                outlined
+                dense
+                v-model="data.idStatus"
+                :options="optionStatus"
+                label="Estado *"
+                class="col-md-5"
+                lazy-rules
+                :rules="[
+                    val => (val && val.value !== '') || 'El campo es requerido.'
+                  ]"
+              >
+              </q-select>
+
               <div class="col-12 col-md-5">
               </div>
 
@@ -168,9 +182,11 @@ export default {
           console.log(response)
           const {data} = response;
           let company = this.optionCompanies.find(x => x.value === data.idCompany);
+          let status = this.optionStatus.find(x => x.value === data.idCompany);
           this.data = {
             ...data,
             idCompany: company,
+            idStatus: status,
           };
           this.hideLoading();
         }).catch(error => {
@@ -213,10 +229,16 @@ export default {
         serial: null,
         color: null,
         valuePerHour: null,
-        idCompany: null
+        idCompany: null,
+        idStatus: null
       },
       optionCompanies: [
         {label: "Inge rental S.A.S", value: 1},
+      ],
+      optionStatus: [
+        {label: "Disponible", value: 1},
+        {label: "Mantenimiento", value: 2},
+        {label: "Ocupada", value: 3},
       ]
     }
   }

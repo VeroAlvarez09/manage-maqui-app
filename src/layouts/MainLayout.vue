@@ -129,7 +129,7 @@ export default {
           link: "/machines"
         },
         {
-          title: "Horas totales",
+          title: "Bonificaciones",
           icon: "access_time",
           link: "/employees/hours"
         },

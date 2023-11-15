@@ -213,19 +213,44 @@ export default {
         ServiceApi.get(`/employee/${this.data.id}`).then(response => {
           console.log(response)
           const {data} = response;
-          let machine = this.optionMachines.find(x => x.value === data.idMachine);
           let company = this.optionCompanies.find(x => x.value === data.idCompany);
           this.data = {
             ...data,
-            idMachine: machine,
             idCompany: company
           };
+          this.onRequestMachines(data.idMachine)
           this.hideLoading();
         }).catch(error => {
           this.Noty("error", error.message);
           this.hideLoading();
         });
+      } else {
+        this.onRequestMachines()
       }
+    },
+    onRequestMachines(idMachine = null) {
+      this.showLoading("consultando maquinas...");
+      ServiceApi.get(`/machine?page=${1},perPage=${10000}`, {})
+        .then(response => {
+          const {data} = response.data;
+          let optionsMachines = [];
+          data.map(machine => {
+            optionsMachines.push({label: machine.brand, value: machine.id});
+          })
+
+          this.optionMachines = optionsMachines;
+          if (idMachine) {
+            let machine = optionsMachines.find(x => x.value === idMachine);
+            this.data = {
+              ...this.data,
+              idMachine: machine
+            };
+          }
+          this.hideLoading();
+        })
+        .catch(error => {
+          this.hideLoading();
+        });
     },
     onSubmit() {
       this.showLoading(this.data.id > 0 ? "Actualizando empleado....." : " Creando empleado...");
@@ -274,9 +299,7 @@ export default {
       optionCompanies: [
         {label: "Inge rental S.A.S", value: 1},
       ],
-      optionMachines: [
-        {label: "Volvo BL70", value: 1},
-      ]
+      optionMachines: []
     }
   }
 }

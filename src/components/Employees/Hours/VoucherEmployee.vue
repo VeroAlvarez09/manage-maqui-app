@@ -16,10 +16,10 @@
         </q-toolbar-title>
         <q-separator></q-separator>
         <q-card-section class="row">
-          <div class="col-6"><b>Nombre empresa:</b> Inge Renta S.A.S</div>
+          <div class="col-6"><b>Nombre empresa:</b> Inge Rental S.A.S</div>
           <div class="col-6"><b>NIT:</b> 123456</div>
 
-          <div class="col-6"><b>Correo Electrónico:</b> admin@ingerentas.com</div>
+          <div class="col-6"><b>Correo Electrónico:</b> admin@ingerental.com</div>
           <div class="col-6"><b>Telefono:</b> 2147483647</div>
         </q-card-section>
       </q-card>
