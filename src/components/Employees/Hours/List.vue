@@ -131,10 +131,9 @@
 import ServiceApi from "src/helpers/ServiceApi";
 import Moment from "moment/moment";
 import VoucherEmployee from "components/Employees/Hours/VoucherEmployee.vue";
-import Comprobante from "components/Cobros/Comprobante.vue";
 
 export default {
-  components: {Comprobante, VoucherEmployee},
+  components: {VoucherEmployee},
   mounted() {
     this.onRequest();
   },
